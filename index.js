@@ -1,5 +1,5 @@
 const express = require ('express')
-const routes = require ('/routes/public')
+const routes = require ('./routes/public')
 
 require('dotenv').config()
 const app = express ()
