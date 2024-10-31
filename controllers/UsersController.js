@@ -19,6 +19,21 @@ module.exports = class UsersController{
         })
         res.send(user)
     }
+    static async update (req, res){
+        const user = await users.findByPk(req.params.id)
+        const result = await users.update(
+            {
+                nome: req.body.nome,
+                email: req.body.email,
+                password: req.body.password
+            },
+            {
+                where: { id: req.params.id } 
+                
+            }
+        );
+        res.send(result)
+    }
     static async delete(req, res){
         const user = await users.findByPk(req.params.id)
         await user.destroy()

@@ -18,7 +18,8 @@ router.get ('/12', (req, res) => {
 router.post('/usuarios',UsersController.create)
 router.get('/usuarios', UsersController.showAll)
 router.get('/usuarios/:id', UsersController.showOne)
-
+router.put('/usuarios/:id', UsersController.update)
+router.delete('/usuarios/:id', UsersController.delete)
 
 router.use((req, res, next) =>{
     res.status(404).send('Rota não encontrada')
